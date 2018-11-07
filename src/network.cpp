@@ -3,8 +3,6 @@
 #include <algorithm>
 #include <stdexcept>
 
-#include <iostream>
-
 struct greater
 {
     template<class T>
