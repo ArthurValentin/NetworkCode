@@ -43,8 +43,17 @@ void RandomNumbers::poisson(std::vector<int> &res, double mean) {
     for (auto I = res.begin(); I != res.end(); I++) *I = pois(rng);
 }
 
+void RandomNumbers::poisson(std::vector<size_t> &res, double mean) {
+    std::poisson_distribution<> pois(mean);
+    for (auto I = res.begin(); I != res.end(); I++) *I = size_t(pois(rng));
+}
+
 void RandomNumbers::uniform_int(std::vector<int> &res, int lower, int upper) {
     std::uniform_int_distribution<> unif(lower, upper);
     for (auto I = res.begin(); I != res.end(); I++) *I = unif(rng);
+}
+
+int RandomNumbers::uniform_int(int lower, int upper) {
+	return int(uniform_double(lower, upper));
 }
 

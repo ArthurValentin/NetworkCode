@@ -30,12 +30,11 @@ public:
     void normal(std::vector<double>&, double mean=0, double sd=1);
     double normal(double mean=0, double sd=1);
     void poisson(std::vector<int>&, double mean=1);
+    void poisson(std::vector<size_t>&, double mean=1);
     int poisson(double mean=1);
     void uniform_int(std::vector<int>&, int lower=0, int upper=100);
+    int uniform_int(int lower=0, int upper=100);
 ///@}
-/*!
-  Shuffle take a vector of *size_t* and re-orders it randomly.
- */
     void shuffle(std::vector<size_t> &_v) {std::shuffle(_v.begin(), _v.end(), rng);}
      
 private:
